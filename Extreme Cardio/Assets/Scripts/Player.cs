@@ -9,11 +9,13 @@ public class Player : MonoBehaviour
     #region Basic player movement variables
 
     [Header("Walking Variables")]
-    [SerializeField] private float horizontalMovementSpeed = 1f;
+    [SerializeField] private float X_MovementSpeed = 1f;
+    [SerializeField] private float Z_MovementSpeed = 1f;
 
     [Header("Jumping and Jumping Detection Variables")]
     [SerializeField] private float raycastLength = 0.0f;
-    [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private LayerMask groundLayer = LayerMask.GetMask();
+    [SerializeField] private int jumpingRaycastDirectionMultiplier = 1;
     private bool isGrounded = true;
 
 
@@ -33,14 +35,23 @@ public class Player : MonoBehaviour
     void FixedUpdate()
     {
         PlayerOnGround();
-        HorizontolMovement();
+        XMovement();
+        ZMovement();
         PlayerJump();
+
+        SwitchGravityAndControls();
     }
 
-    void HorizontolMovement()
+    void XMovement()
     {
-        float horizontalFloat = Time.deltaTime * Input.GetAxisRaw("Horizontal") * horizontalMovementSpeed;
-        playerRigidbody.velocity = new Vector3(horizontalFloat , playerRigidbody.velocity.y , playerRigidbody.velocity.z);
+        float XFloat = Time.deltaTime * Input.GetAxis("Horizontal") * X_MovementSpeed;
+        playerRigidbody.velocity = new Vector3(XFloat , playerRigidbody.velocity.y , playerRigidbody.velocity.z);
+    }
+
+    void ZMovement()
+    {
+        float ZFloat = Time.deltaTime * Z_MovementSpeed;
+        playerRigidbody.velocity = new Vector3(playerRigidbody.velocity.x , playerRigidbody.velocity.y , ZFloat);
     }
 
     void PlayerJump()
@@ -53,7 +64,7 @@ public class Player : MonoBehaviour
 
     void PlayerOnGround()
     {
-        Ray groundedRay = new Ray(transform.position, -transform.up);
+        Ray groundedRay = new Ray(transform.position, -transform.up * jumpingRaycastDirectionMultiplier);
         RaycastHit rayHitInfo;
 
 
@@ -65,5 +76,28 @@ public class Player : MonoBehaviour
             isGrounded = false;
     }
 
-    
+    private void SwitchGravityAndControls()
+    {
+        if(Input.GetKeyDown(KeyCode.R))
+        {
+            jumpingRaycastDirectionMultiplier *= -1;
+            Physics.gravity *= -1;
+            jumpStrength *= -1;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "SectionTrigger")
+        {
+            SectionManager sm = other.transform.parent.GetComponent<SectionManager>();
+            if (sm != null)
+                sm.AddSection();
+        }
+        else if (other.tag == "SectionDeleter")
+        {
+            SectionManager sm = other.transform.parent.GetComponent<SectionManager>();
+            sm.RemoveSection();
+        }
+    }
 }
