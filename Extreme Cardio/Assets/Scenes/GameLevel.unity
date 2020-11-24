@@ -5199,26 +5199,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2976216860083554018, guid: 7a540f28b437e204d98135b54f56f184, type: 3}
-      propertyPath: _ObjectPools.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2976216860083554018, guid: 7a540f28b437e204d98135b54f56f184, type: 3}
-      propertyPath: _PooledObjects.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2976216860083554018, guid: 7a540f28b437e204d98135b54f56f184, type: 3}
-      propertyPath: _ObjectPools.Array.data[0]._PooledObject
-      value: 
-      objectReference: {fileID: 1600377283823705362, guid: 7d9cac48247a3c247b3153508d850c35, type: 3}
-    - target: {fileID: 2976216860083554018, guid: 7a540f28b437e204d98135b54f56f184, type: 3}
-      propertyPath: _ObjectPools.Array.data[0]._PoolSize
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 2976216860083554018, guid: 7a540f28b437e204d98135b54f56f184, type: 3}
-      propertyPath: _ObjectPools.Array.data[0]._ShouldGrow
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2976216860083554019, guid: 7a540f28b437e204d98135b54f56f184, type: 3}
       propertyPath: m_Name
       value: PoolManager
@@ -5341,6 +5321,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6718626717180876366, guid: f987a0d6ee394a14ebf3b18331700eaa, type: 3}
+      propertyPath: jumpStrength
+      value: 1500
+      objectReference: {fileID: 0}
     - target: {fileID: 6718626717180876367, guid: f987a0d6ee394a14ebf3b18331700eaa, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

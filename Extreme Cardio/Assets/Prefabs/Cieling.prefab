@@ -104,6 +104,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2822591087286627951}
+  - component: {fileID: 3312685683900414857}
   m_Layer: 8
   m_Name: Cieling
   m_TagString: Ground
@@ -126,3 +127,53 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -180}
+--- !u!114 &3312685683900414857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2822591087286627948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d74162ba66010b44859f6e5402380e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsCieling: 1
+  Rows:
+  - HasCoins: 0
+    IsActive: 0
+    RowPositions:
+    - {x: 0, y: 0, z: 5}
+    - {x: 10, y: 0, z: 5}
+    - {x: -10, y: 0, z: 5}
+  - HasCoins: 0
+    IsActive: 0
+    RowPositions:
+    - {x: 0, y: 0, z: 15}
+    - {x: 10, y: 0, z: 15}
+    - {x: -10, y: 0, z: 15}
+  - HasCoins: 0
+    IsActive: 0
+    RowPositions:
+    - {x: 0, y: 0, z: 25}
+    - {x: 10, y: 0, z: 25}
+    - {x: -10, y: 0, z: 25}
+  - HasCoins: 0
+    IsActive: 0
+    RowPositions:
+    - {x: 0, y: 0, z: 35}
+    - {x: 10, y: 0, z: 35}
+    - {x: -10, y: 0, z: 35}
+  - HasCoins: 0
+    IsActive: 0
+    RowPositions:
+    - {x: 0, y: 0, z: 45}
+    - {x: 10, y: 0, z: 45}
+    - {x: -10, y: 0, z: 45}
+  - HasCoins: 0
+    IsActive: 0
+    RowPositions:
+    - {x: 0, y: 0, z: 55}
+    - {x: 10, y: 0, z: 55}
+    - {x: -10, y: 0, z: 55}

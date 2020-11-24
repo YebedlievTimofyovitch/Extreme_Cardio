@@ -44,12 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ObjectPools:
-  - _PoolSize: 0
-    _PooledObject: {fileID: 0}
+  - _PoolSize: 7
+    _PooledObject: {fileID: 1600377283823705362, guid: 7d9cac48247a3c247b3153508d850c35, type: 3}
     _ShouldGrow: 0
-  - _PoolSize: 0
-    _PooledObject: {fileID: 0}
-    _ShouldGrow: 0
-  - _PoolSize: 0
-    _PooledObject: {fileID: 0}
-    _ShouldGrow: 0
+  _PooledObjects: []

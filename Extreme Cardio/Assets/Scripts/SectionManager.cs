@@ -33,4 +33,6 @@ public class SectionManager : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
+
+    
 }

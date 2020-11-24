@@ -8,6 +8,8 @@ TagManager:
   - Ground
   - SectionTrigger
   - SectionDeleter
+  - Obstacle
+  - GoldCoin
   layers:
   - Default
   - TransparentFX
